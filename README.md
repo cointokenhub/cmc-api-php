@@ -9,11 +9,11 @@ This php package is a wrapper for the [coinmarketcap.com API](https://coinmarket
 - The global data endpoint "/global", which returns some stats like the total market cap, active currencies, active markets and so on.
 
 
-##Install
+## Install
 
     composer require andskur/coinmc
 
-##Usage
+## Usage
 
 ```php
 <?php
@@ -37,13 +37,13 @@ class SomeController extends Controller
 }
 ```
 
-###Configuring for Laravel
+### Configuring for Laravel
 
-####Laravel 5.5 and higher
+#### Laravel 5.5 and higher
 
 You don't need to change or add any config as this package uses [Package Auto Discovery](https://laravel-news.com/package-auto-discovery).
 
-####Laravel 5.4 and lower
+#### Laravel 5.4 and lower
 
 After installing, register the `CoinTokenHub\CoinMarketCapApi\CoinMarketCapServiceProvider` service provider in your `config/app.php` file.
 
