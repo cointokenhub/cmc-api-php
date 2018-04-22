@@ -25,7 +25,7 @@ class CoinMarketCapApiTest extends TestCase
 		$convertToCurrency = 'INVALID';
 		$httpClient = new Client();
 		$cmcApi = new CoinMarketCapApi($httpClient);
-		$this->assertEmpty($cmcApi->ticker($convertToCurrency));
+		$this->assertEquals(array(), $cmcApi->ticker($convertToCurrency));
 	}
 
 	public function testShouldReturnValidArrayForTicker() {
@@ -50,7 +50,7 @@ class CoinMarketCapApiTest extends TestCase
 		$convertToCurrency = 'INVALID';
 		$httpClient = new Client();
 		$cmcApi = new CoinMarketCapApi($httpClient);
-		$this->assertEmpty($cmcApi->currencyTicker($convertToCurrency));
+		$this->assertEquals(array(), $cmcApi->currencyTicker($convertToCurrency));
 	}
 
 	public function testShouldReturnValidArrayForCurrencyTicker() {
@@ -87,7 +87,7 @@ class CoinMarketCapApiTest extends TestCase
 		$convertToCurrency = 'INVALID';
 		$httpClient = new Client();
 		$cmcApi = new CoinMarketCapApi($httpClient);
-		$this->assertEmpty($cmcApi->currencyTicker($convertToCurrency));
+		$this->assertEquals(array(), $cmcApi->currencyTicker($convertToCurrency));
 	}
 
 	public function testShouldReturnValidArrayForGlobalData() {
