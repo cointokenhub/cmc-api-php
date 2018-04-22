@@ -1,6 +1,6 @@
 # CoinMarketCap API Wrapper
 
-[![codecov](https://codecov.io/gh/cointokenhub/cmc-api-php/branch/master/graph/badge.svg)](https://codecov.io/gh/cointokenhub/cmc-api-php)
+[![codecov](https://codecov.io/gh/cointokenhub/cmc-api-php/branch/master/graph/badge.svg)](https://codecov.io/gh/cointokenhub/cmc-api-php) [![Build Status](https://travis-ci.org/cointokenhub/cmc-api-php.svg?branch=master)](https://travis-ci.org/cointokenhub/cmc-api-php)
 
 This php package allows you to talk to the Coinmarketcap API. It supports three endpoints:
 
