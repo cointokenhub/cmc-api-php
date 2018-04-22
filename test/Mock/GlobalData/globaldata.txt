@@ -1,0 +1,11 @@
+{
+  "total_market_cap_usd": 383163160300.0,
+  "total_24h_volume_usd": 23052912522.0,
+  "bitcoin_percentage_of_market_cap": 39.32,
+  "active_currencies": 895,
+  "active_assets": 689,
+  "active_markets": 10653,
+  "last_updated": 1524366272,
+  "total_market_cap_aud": 499235542775.0,
+  "total_24h_volume_aud": 30036377418.0
+}
