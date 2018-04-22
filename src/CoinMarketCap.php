@@ -1,14 +1,14 @@
 <?php
 
-namespace CmcApiPhp;
+namespace CoinTokenHub\CoinMarketCapApi;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException as GuzzleException;
 
 /**
- * Class CoinMarketCapApi
- * @package CmcApiPhp
+ * Class CoinMarketCap
+ * @package CoinTokenHub\CoinMarketCapApi
  */
-class CoinMarketCapApi {
+class CoinMarketCap {
 
 	/**
 	 * @var string
