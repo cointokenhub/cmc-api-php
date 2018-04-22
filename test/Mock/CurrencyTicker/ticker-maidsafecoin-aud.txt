@@ -1,0 +1,20 @@
+[{
+  "id": "maidsafecoin",
+  "name": "MaidSafeCoin",
+  "symbol": "MAID",
+  "rank": "100",
+  "price_usd": "0.369035",
+  "price_btc": "0.00004157",
+  "24h_volume_usd": "1536630.0",
+  "market_cap_usd": "167007679.0",
+  "available_supply": "452552412.0",
+  "total_supply": "452552412.0",
+  "max_supply": null,
+  "percent_change_1h": "1.1",
+  "percent_change_24h": "-1.04",
+  "percent_change_7d": "8.91",
+  "last_updated": "1524384842",
+  "price_aud": "0.4808275106",
+  "24h_volume_aud": "2002124.39916",
+  "market_cap_aud": "217599650.0"
+}]

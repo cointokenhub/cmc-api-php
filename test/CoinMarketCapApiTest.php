@@ -37,6 +37,15 @@ class CoinMarketCapApiTest extends TestCase
 		);
 	}
 
+	public function testShouldReturnValidArrayForTickerWithCurrencyLimitAndStart() {
+		$mockResponse = file_get_contents( __DIR__ . '/Mock/Ticker/ticker-reponse-aud-limit-5-start-5.txt');
+		$cmcApi = new CoinMarketCapApi($this->createHttpClient(200, $mockResponse));
+		$this->assertEquals(
+			json_decode($mockResponse, true),
+			$cmcApi->ticker('AUD', 5, 5)
+		);
+	}
+
 	public function testResponseEmptyIfCurrencyInvalidForCurrencyTicker() {
 		$convertToCurrency = 'INVALID';
 		$httpClient = new Client();
@@ -53,6 +62,17 @@ class CoinMarketCapApiTest extends TestCase
 			$cmcApi->currencyTicker('maidsafecoin', false)
 		);
 	}
+
+	public function testShouldReturnValidArrayForCurrencyTickerWithCurrency() {
+		$mockResponse = file_get_contents( __DIR__ . '/Mock/CurrencyTicker/ticker-maidsafecoin-aud.txt');
+		$cmcApi = new CoinMarketCapApi($this->createHttpClient(200, $mockResponse));
+		$mockResponseArray = json_decode($mockResponse, true);
+		$this->assertEquals(
+			$mockResponseArray[0],
+			$cmcApi->currencyTicker('maidsafecoin', 'AUD')
+		);
+	}
+
 
 	public function testShouldReturnErrorResponseForInvalidCurrencyTicker() {
 		$mockResponse = '{"error": "id not found"}';
@@ -76,6 +96,15 @@ class CoinMarketCapApiTest extends TestCase
 		$this->assertEquals(
 			json_decode($mockResponse, true),
 			$cmcApi->globalData()
+		);
+	}
+
+	public function testShouldReturnValidArrayForGlobalDataWithCurrency() {
+		$mockResponse = file_get_contents( __DIR__ . '/Mock/GlobalData/globaldata-aud.txt');
+		$cmcApi = new CoinMarketCapApi($this->createHttpClient(200, $mockResponse));
+		$this->assertEquals(
+			json_decode($mockResponse, true),
+			$cmcApi->globalData('AUD')
 		);
 	}
 }
