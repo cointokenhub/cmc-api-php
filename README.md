@@ -11,7 +11,7 @@ This php package is a wrapper for the [coinmarketcap.com API](https://coinmarket
 
 ## Install
 
-    composer require andskur/coinmc
+    composer require cointokenhub/cmc-api-php
 
 ## Usage
 
