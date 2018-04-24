@@ -68,7 +68,7 @@ class CoinMarketCap {
 
 		if ($parameters) {
 			$query = http_build_query($parameters);
-			$url = $url . $query;
+			$url = $url . '?' . $query;
 		}
 
 		try {

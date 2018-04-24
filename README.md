@@ -15,26 +15,64 @@ This php package is a wrapper for the [coinmarketcap.com API](https://coinmarket
 
 ## Usage
 
+### In a PHP app:
+
+```php
+use GuzzleHttp\Client;
+use CoinTokenHub\CoinMarketCapApi\CoinMarketCap;
+
+$httpClient = new Client();
+$cmcApi = new CoinMarketCap($httpClient);
+
+
+$api->ticker('AUD', false, 5);
+$api->currencyTicker($coin);
+$api->globalData();
+```
+
+### In Laravel:
+Add a route to `routes/web.php` that looks like below:
+
+```php
+Route::get('coin/{coin}', 'CoinController@coin');
+Route::get('ticker', 'CoinController@ticker');
+Route::get('global_data', 'CoinController@globalData');
+```
+
+
+Controller looks like below:
 ```php
 <?php
 
+namespace App\Http\Controllers;
+
+use GuzzleHttp\Client;
 use CoinTokenHub\CoinMarketCapApi\CoinMarketCap;
 
-class SomeController extends Controller
+class CoinController extends Controller
 {
-    public function index(CoinMarketCap $cmc)
-    {
+	private $httpClient;
 
-        // Top 100 crypto currencies by market cap
-		$cmc->ticker();
+	public function __construct(Client $httpClient) {
+		$this->httpClient = $httpClient;
+	}
 
-		// Get ticker for a specific coin
-		$cmc->currencyTicker('rchain');
+    public function coin($coin) {
+		$api = new CoinMarketCap($this->httpClient);
+		return json_encode($api->currencyTicker($coin));
+    }
 
-		// Get global data
-		$cmc->globalData();
+    public function ticker() {
+	    $api = new CoinMarketCap($this->httpClient);
+	    return json_encode($api->ticker('AUD', false, 5));
+    }
+
+    public function globalData() {
+	    $api = new CoinMarketCap($this->httpClient);
+	    return json_encode($api->globalData());
     }
 }
+
 ```
 
 ### Configuring for Laravel
