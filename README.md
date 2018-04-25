@@ -96,5 +96,5 @@ After installing, register the `CoinTokenHub\CoinMarketCapApi\CoinMarketCapServi
 Also add the facade to your `aliases` array in the `config/app.php` file in order to easily access this wrapper using the `CoinMarketCap` alias
 
 ```php
-'CoinMarketCap' => CoinTokenHub\CoinMarketCapApi\CoinMarketCapServiceProvider::class,
+'CoinMarketCap' => CoinTokenHub\CoinMarketCapApi\CoinMarketCapFacade::class,
 ```
